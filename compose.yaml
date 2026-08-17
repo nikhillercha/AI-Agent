@@ -1,0 +1,22 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8000
+    command: python -m http.server 8000
+    volumes:
+      - ./backend/src:/app
+
+  static_html: # custom key name
+    # image: python:3.14.7-slim
+    build:
+      context: ./static
+      dockerfile: static.Dockerfile
+    ports:
+      - 8000:8000
+      - 3000:8000
+    command: python -m http.server 8000
+    volumes:
+      - ./static/src:/app
