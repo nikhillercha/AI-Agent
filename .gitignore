@@ -1,2 +1,9 @@
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
 .venv
 .idea
+
+.env
